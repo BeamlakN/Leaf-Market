@@ -1,0 +1,55 @@
+ README.md                                   | 178 [32m+++++++++++++++++[m[31m-----------[m
+ index.html                                  |   2 [32m+[m[31m-[m
+ public/images/about.jpg                     | Bin [31m0[m -> [32m934527[m bytes
+ public/images/hero.jpg                      | Bin [31m0[m -> [32m9711545[m bytes
+ public/products/african-violet.jpg          | Bin [31m0[m -> [32m70281[m bytes
+ public/products/african-violet.svg          |   1 [31m-[m
+ public/products/aloe-vera.jpg               | Bin [31m0[m -> [32m39348[m bytes
+ public/products/aloe-vera.svg               |   1 [31m-[m
+ public/products/echeveria.jpg               | Bin [31m0[m -> [32m45495[m bytes
+ public/products/echeveria.svg               |   1 [31m-[m
+ public/products/fiddle-leaf-fig.jpg         | Bin [31m0[m -> [32m49524[m bytes
+ public/products/fiddle-leaf-fig.svg         |   1 [31m-[m
+ public/products/hanging-ceramic-planter.jpg | Bin [31m0[m -> [32m48117[m bytes
+ public/products/jade-plant.jpg              | Bin [31m0[m -> [32m82171[m bytes
+ public/products/jade-plant.svg              |   1 [31m-[m
+ public/products/macrame-hanging-planter.jpg | Bin [31m0[m -> [32m55386[m bytes
+ public/products/monstera.jpg                | Bin [31m0[m -> [32m40348[m bytes
+ public/products/monstera.svg                |   1 [31m-[m
+ public/products/orchid.jpg                  | Bin [31m0[m -> [32m34149[m bytes
+ public/products/orchid.svg                  |   1 [31m-[m
+ public/products/peace-lily.jpg              | Bin [31m0[m -> [32m29264[m bytes
+ public/products/peace-lily.svg              |   1 [31m-[m
+ public/products/pothos.jpg                  | Bin [31m0[m -> [32m96569[m bytes
+ public/products/pothos.svg                  |   1 [31m-[m
+ public/products/rubber-plant.jpg            | Bin [31m0[m -> [32m80961[m bytes
+ public/products/rubber-plant.svg            |   1 [31m-[m
+ public/products/speckled-ceramic-pot.jpg    | Bin [31m0[m -> [32m70830[m bytes
+ public/products/spider-plant.jpg            | Bin [31m0[m -> [32m73448[m bytes
+ public/products/spider-plant.svg            |   1 [31m-[m
+ public/products/string-of-pearls.jpg        | Bin [31m0[m -> [32m36715[m bytes
+ public/products/string-of-pearls.svg        |   1 [31m-[m
+ public/products/terracotta-classic-pot.jpg  | Bin [31m0[m -> [32m40019[m bytes
+ public/products/terracotta-saucer-pot.jpg   | Bin [31m0[m -> [32m16927[m bytes
+ public/products/white-ceramic-planter.jpg   | Bin [31m0[m -> [32m9802[m bytes
+ src/App.jsx                                 |  11 [32m+[m[31m-[m
+ src/FormReducer.js                          |  32 [32m+++++[m
+ src/components/CheckoutForm.jsx             |   8 [32m+[m[31m-[m
+ src/components/ContactForm.jsx              | 117 [32m++++++++++++++++++[m
+ src/components/FilterBar.jsx                |   9 [32m+[m[31m-[m
+ src/components/SiteHeader.jsx               |  10 [32m+[m[31m-[m
+ src/components/TextField.jsx                |  11 [32m+[m[31m-[m
+ src/data/Siteimages.js                      |  15 [32m+++[m
+ src/data/imageConfig.js                     |   3 [32m+[m
+ src/data/products.js                        |  38 [32m+++[m[31m---[m
+ src/pages/AboutPage.jsx                     |  48 [32m++++++++[m
+ src/pages/CartPage.jsx                      |   6 [32m+[m[31m-[m
+ src/pages/CatalogPage.jsx                   |  55 [32m+++++++[m[31m--[m
+ src/pages/ContactPage.jsx                   |  26 [32m++++[m
+ src/pages/HomePage.jsx                      |  84 [32m+++++++++++++[m
+ src/pages/NotFoundPage.jsx                  |   4 [32m+[m[31m-[m
+ src/pages/ProductDetailPage.jsx             |  10 [32m+[m[31m-[m
+ src/pages/ThankYouPage.jsx                  |   4 [32m+[m[31m-[m
+ src/validation.js                           |   9 [32m++[m
+ tailwind.config.js                          |   4 [32m+[m[31m-[m
+ 54 files changed, 555 insertions(+), 141 deletions(-)
