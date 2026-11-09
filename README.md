@@ -4,8 +4,9 @@ Chosen option: B — Marketplace Product-Listing Page
 
 Leaf Market is a responsive storefront for a small plant shop. It gives shoppers a simple way to browse products, filter by category, view detailed plant information, and add items to their cart. The app also includes a simulated checkout experience to demonstrate how a complete ecommerce flow can work on the front end. This project was built with React, Vite, Tailwind CSS, and React Router to keep the experience fast, accessible, and mobile-friendly.
 
-- Live URL: https://leaf-market-demo.vercel.app
+- Live URL: [https://leaf-market-demo.vercel.app](https://leaf-market-xabg-chi.vercel.app/)
 - GitHub URL: https://github.com/BeamlakN/leaf-market
+
 
 ## Features
 
@@ -48,23 +49,9 @@ npm run preview
 No environment variables or API keys are required for local development.
 
 ## Screenshots
+<img width="546" height="502" alt="desktop_before" src="https://github.com/user-attachments/assets/cb82a7c3-ad23-43c2-8cea-7e9d10c17307" />
+<img width="542" height="557" alt="finalpro" src="https://github.com/user-attachments/assets/999f4667-0d0b-4c39-b08c-854669796693" />
 
-### Mobile width (375px)
-
-<img src="./public/images/hero.jpg" alt="Leaf Market mobile layout" width="375" />
-
-### Desktop width (1280px)
-
-<img src="./public/images/hero.jpg" alt="Leaf Market desktop layout" width="1280" />
-
-## Lighthouse results
-
-| Page | Before | After |
-|---|---:|---:|
-| Home page (mobile) | 58 | 91 |
-| Product page (mobile) | 62 | 89 |
-| Home page (desktop) | 71 | 95 |
-| Product page (desktop) | 73 | 94 |
 
 ### Accessibility and performance issues fixed
 
