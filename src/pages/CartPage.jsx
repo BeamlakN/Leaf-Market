@@ -21,8 +21,8 @@ function CartPage({ items, dispatch }) {
       <>
         <h1 className="mb-3 text-3xl font-medium">Your cart is empty</h1>
         <p className="mb-4">Add a plant or two and they’ll show up here.</p>
-        <Link to="/" className={`rounded text-link underline ${focusRing}`}>
-          Browse the shop
+        <Link to="/plants" className={`rounded text-link underline ${focusRing}`}>
+          Browse plants
         </Link>
       </>
     );

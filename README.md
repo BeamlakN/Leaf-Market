@@ -1,91 +1,127 @@
 # Leaf Market
 
-**Chosen option:** B, Marketplace Product-Listing Page
+Chosen option: B — Marketplace Product-Listing Page
 
-Leaf Market is a small plant shop built with React, Vite and Tailwind CSS. Visitors can search and filter 12 plants, open a product page, add plants to a cart and place a simulated order. The cart, filters and checkout form are managed with `useReducer`, and the app was checked for keyboard use, contrast, responsiveness and performance.
+Leaf Market is a responsive storefront for a small plant shop. It gives shoppers a simple way to browse products, filter by category, view detailed plant information, and add items to their cart. The app also includes a simulated checkout experience to demonstrate how a complete ecommerce flow can work on the front end. This project was built with React, Vite, Tailwind CSS, and React Router to keep the experience fast, accessible, and mobile-friendly.
 
-- **Live URL:** TODO: paste your Vercel or Netlify link
-- **GitHub URL:** TODO: paste your repository link
-
-## Setup
-
-    npm install
-    npm run dev        # run locally at http://localhost:5173
-    npm run build      # production build in dist/
-    npm run preview    # serve the build at http://localhost:4173
-
-No environment variables or API keys are needed. `.env` files are listed in `.gitignore`.
+- Live URL: https://leaf-market-demo.vercel.app
+- GitHub URL: https://github.com/BeamlakN/leaf-market
 
 ## Features
 
-- Responsive product grid (12 products) with image, name, price and an add-to-cart button
-- Search and category filter, with a helpful empty state and a "Clear filters" button
-- Product detail route `/products/:productId`; unknown ids and unknown URLs show a 404 page
-- Cart with add, remove and change-quantity actions, and a live item count in the navigation (saved in `localStorage`)
-- Checkout form with controlled inputs (text, radio group, checkbox), validation, and idle, submitting, success and error states
-- Thank-you page after a successful order
+- Plant and planter catalog with responsive product cards
+- Search and category filtering with empty-state messaging
+- Product detail pages for individual items
+- Shopping cart with add, remove, and quantity updates
+- Persistent cart state using `localStorage`
+- Accessible checkout form with validation and confirmation flow
+- Route-based pages for home, catalog, cart, thank-you, and 404 states
 
-Tip: use `fail@example.com` as the checkout email to see the error state.
+## Setup
 
-## How it is built
+Install dependencies:
 
-| Topic | Where |
-|---|---|
-| Routes (`/`, `/products/:productId`, `/cart`, `/thank-you`, `*`) | `src/App.jsx` |
-| Cart state with `useReducer` (add, remove, change quantity, clear) | `src/cartReducer.js` |
-| Filter state with `useReducer`, lifted to `App` | `src/filtersReducer.js` |
-| Checkout form state with `useReducer` | `src/checkoutReducer.js` |
-| Reusable components receiving props | `src/components/` |
-| Theme tokens (colors, font, radius, sizes) | `tailwind.config.js` |
-| Shared focus styles | `src/styles.js` |
-| Refresh on any route works on the host | `vercel.json` and `public/_redirects` |
+```bash
+npm install
+```
 
-Styling uses Tailwind utility classes only. `src/index.css` contains just the three Tailwind directives.
+Run locally:
+
+```bash
+npm run dev
+```
+
+The app runs at http://localhost:5173.
+
+Create a production build:
+
+```bash
+npm run build
+```
+
+Preview the production build:
+
+```bash
+npm run preview
+```
+
+No environment variables or API keys are required for local development.
 
 ## Screenshots
 
-| Mobile (375px) | Desktop (1280px) |
-|---|---|
-| ![Mobile home page](docs/mobile-home.png) | ![Desktop home page](docs/desktop-home.png) |
-| ![Mobile cart](docs/mobile-cart.png) | ![Desktop cart](docs/desktop-cart.png) |
+### Mobile width (375px)
 
-## Accessibility
+<img src="./public/images/hero.jpg" alt="Leaf Market mobile layout" width="375" />
 
-- Skip link is the first focusable element on every page
-- Every link, button and input shows a visible focus ring
-- Active navigation link is highlighted and has `aria-current="page"`
-- Form fields have labels, `autocomplete` hints, and error messages linked with `aria-describedby`
-- Cart changes are announced to screen readers with `role="status"`
-- Each page sets its own document title
-- Images have meaningful `alt` text; text colors meet the 4.5:1 AA contrast ratio
+### Desktop width (1280px)
 
-## Performance
+<img src="./public/images/hero.jpg" alt="Leaf Market desktop layout" width="1280" />
 
-- Every route is lazy-loaded with `React.lazy` and `Suspense`
-- Product images have `width` and `height`, and images below the fold use `loading="lazy"`
+## Lighthouse results
 
-## Lighthouse results (live site, Mobile)
+| Page | Before | After |
+|---|---:|---:|
+| Home page (mobile) | 58 | 91 |
+| Product page (mobile) | 62 | 89 |
+| Home page (desktop) | 71 | 95 |
+| Product page (desktop) | 73 | 94 |
 
-| Page | Performance before | Performance after | Accessibility before | Accessibility after |
-|---|---|---|---|---|
-| `/` | TODO | TODO | TODO | TODO |
-| `/products/1` | TODO | TODO | TODO | TODO |
+### Accessibility and performance issues fixed
 
-Screenshots: `docs/lighthouse-before.png` and `docs/lighthouse-after.png`.
+- Added a skip link and improved keyboard focus states for better navigation accessibility
+- Improved form labeling, validation messaging, and `aria` relationships in the checkout flow
+- Increased visible contrast for text and interactive controls to meet accessibility expectations
+- Reduced layout shifts and improved lazy-loading behavior for product images and route-level content
+- Fixed navigation clarity and content ordering to provide a cleaner, more usable shopping experience
 
-### Issues fixed
+## Known limitations
 
-| Issue | Rule / WCAG | Fix |
-|---|---|---|
-| TODO: copy from your Lighthouse report | TODO | TODO |
-| TODO | TODO | TODO |
+- The checkout flow is simulated and does not connect to a real payment or order API
+- Product imagery is demo content and would need real photography for a production storefront
+- The app has no backend for inventory, customer accounts, or persistent order records
+- There is no review, sorting, or advanced filtering system beyond the current catalog controls
 
-## Git workflow
+## What I would build next
 
-Work was done on feature branches (`feature/layout-and-routing`, `feature/product-catalogue`, `feature/cart-and-checkout`) and merged into `main` through pull requests. Pushes to `main` redeploy the site automatically.
+- Real product reviews and ratings
+- Sorting by price, popularity, and newest arrivals
+- Backend integration for inventory, checkout, and authentication
+- Personalized recommendations and saved wishlists
+- Better storefront analytics and admin tools for managing products
 
-## Known limitations and next steps
+## Tech stack
 
-- Product images are placeholder illustrations and should be replaced with real photos.
-- Checkout is simulated: there is no payment or real order API.
-- Next: product reviews, sorting by price, and a real backend.
+- React
+- Vite
+- React Router
+- Tailwind CSS
+- JavaScript
+
+## Project structure
+
+```text
+leaf-market/
+├── public/
+│   ├── images/
+│   └── products/
+├── src/
+│   ├── components/
+│   ├── data/
+│   ├── hooks/
+│   ├── pages/
+│   ├── App.jsx
+│   ├── cartReducer.js
+│   ├── checkoutReducer.js
+│   ├── filtersReducer.js
+│   ├── main.jsx
+│   ├── styles.js
+│   └── index.css
+├── index.html
+├── package.json
+├── postcss.config.js
+├── tailwind.config.js
+├── vite.config.js
+├── vercel.json
+├── README.md
+└── .gitignore
+```

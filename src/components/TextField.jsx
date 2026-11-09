@@ -1,17 +1,18 @@
 import { focusRing } from '../styles.js';
 
-function TextField({ label, name, type = 'text', placeholder, autoComplete, value, error, disabled, onChange, onBlur }) {
+function TextField({ label, name, multiline = false, type = 'text', placeholder, autoComplete, value, error, disabled, onChange, onBlur }) {
   const errorId = `${name}-error`;
+  const Control = multiline ? 'textarea' : 'input';
 
   return (
     <div className="flex flex-col gap-1.5">
       <label htmlFor={name} className="text-sm font-medium">
         {label}
       </label>
-      <input
+      <Control
         id={name}
         name={name}
-        type={type}
+        {...(multiline ? { rows: 5 } : { type })}
         value={value}
         placeholder={placeholder}
         autoComplete={autoComplete}
@@ -21,7 +22,7 @@ function TextField({ label, name, type = 'text', placeholder, autoComplete, valu
         onBlur={onBlur}
         aria-invalid={Boolean(error)}
         aria-describedby={error ? errorId : undefined}
-        className={`h-field w-full rounded-lg border px-3 text-sm transition placeholder:text-muted disabled:cursor-not-allowed disabled:bg-page ${focusRing} ${
+        className={`${multiline ? 'py-2' : 'h-field'} w-full rounded-lg border px-3 text-sm transition placeholder:text-muted disabled:cursor-not-allowed disabled:bg-page ${focusRing} ${
           error ? 'border-danger' : 'border-line'
         }`}
       />

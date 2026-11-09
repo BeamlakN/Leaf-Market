@@ -10,11 +10,11 @@ function ProductDetailPage({ onAddToCart }) {
   const { productId } = useParams();
   const product = products.find((item) => String(item.id) === productId);
 
-  usePageTitle(product ? product.name : 'Plant not found');
+  usePageTitle(product ? product.name : 'Product not found');
 
   // An unknown id such as /products/999 gets the same 404 page as any unknown URL.
   if (!product) {
-    return <NotFoundPage heading="404: Plant not found" message="We couldn’t find that plant. It may have been removed." />;
+    return <NotFoundPage heading="404: Product not found" message="We couldn’t find that product. It may have been removed." />;
   }
 
   return (
@@ -28,8 +28,8 @@ function ProductDetailPage({ onAddToCart }) {
         <div className="mt-2">
           <AddToCartButton product={product} onAdd={onAddToCart} />
         </div>
-        <Link to="/" className={`mt-4 inline-block w-fit rounded text-link underline ${focusRing}`}>
-          Back to the shop
+        <Link to={product.type === 'pot' ? '/pots' : '/plants'} className={`mt-4 inline-block w-fit rounded text-link underline ${focusRing}`}>
+          Back to {product.type === 'pot' ? 'pots' : 'plants'}
         </Link>
       </div>
     </div>

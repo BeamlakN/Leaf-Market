@@ -5,8 +5,8 @@ export default {
     extend: {
       colors: {
         page: '#F5F5F5',          // gray canvas behind the card
-        brand: '#3A5B22',         // Signup button green
-        'brand-dark': '#2C4619',  // hover state of brand
+        brand: '#198754',         // Signup button green
+        'brand-dark': '#157347',  // hover state of brand
         ink: '#111111',           // headings and body text
         muted: '#6B6B6B',         // placeholders and helper text
         line: '#E6E6E6',          // input, divider and button borders

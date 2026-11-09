@@ -6,6 +6,9 @@ import { cartReducer, loadCart, saveCart } from './cartReducer.js';
 import { filtersReducer, initialFilters } from './filtersReducer.js';
 
 // Each page is its own chunk, so the browser only downloads the page being visited.
+const HomePage = lazy(() => import('./pages/HomePage.jsx'));
+const AboutPage = lazy(() => import('./pages/AboutPage.jsx'));
+const ContactPage = lazy(() => import('./pages/ContactPage.jsx'));
 const CatalogPage = lazy(() => import('./pages/CatalogPage.jsx'));
 const ProductDetailPage = lazy(() => import('./pages/ProductDetailPage.jsx'));
 const CartPage = lazy(() => import('./pages/CartPage.jsx'));
@@ -32,7 +35,11 @@ function App() {
       <main id="main-content" tabIndex={-1} className="mx-auto w-full max-w-6xl px-6 py-8 outline-none">
         <Suspense fallback={<p role="status">Loading page…</p>}>
           <Routes>
-            <Route path="/" element={<CatalogPage filters={filters} filtersDispatch={filtersDispatch} onAddToCart={addToCart} />} />
+            <Route path="/" element={<HomePage onAddToCart={addToCart} />} />
+            <Route path="/plants" element={<CatalogPage type="plant" filters={filters} filtersDispatch={filtersDispatch} onAddToCart={addToCart} />} />
+            <Route path="/pots" element={<CatalogPage type="pot" filters={filters} filtersDispatch={filtersDispatch} onAddToCart={addToCart} />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/contact" element={<ContactPage />} />
             <Route path="/products/:productId" element={<ProductDetailPage onAddToCart={addToCart} />} />
             <Route path="/cart" element={<CartPage items={cartItems} dispatch={cartDispatch} />} />
             <Route path="/thank-you" element={<ThankYouPage />} />

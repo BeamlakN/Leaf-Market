@@ -10,7 +10,7 @@ function NotFoundPage({ heading = '404: Page not found', message = 'The page you
       <h1 className="mb-3 text-3xl font-medium">{heading}</h1>
       <p className="mb-4">{message}</p>
       <Link to="/" className={`rounded text-link underline ${focusRing}`}>
-        Back to the shop
+        Back to the home page
       </Link>
     </>
   );

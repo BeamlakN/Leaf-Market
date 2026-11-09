@@ -1,11 +1,13 @@
 import { useReducer } from 'react';
 import TextField from './TextField.jsx';
-import { checkoutReducer, initialCheckoutState } from '../checkoutReducer.js';
+import { formReducer, createFormState } from '../FormReducer.js';
 import { validateCheckout } from '../validation.js';
 import { focusRing } from '../styles.js';
 
 // Stand-in for a real order API so every form state can be demonstrated.
 // Use fail@example.com as the email to see the error state.
+const INITIAL_VALUES = { name: '', email: '', address: '', delivery: 'standard', giftWrap: false };
+
 function placeOrder({ email }) {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
@@ -19,7 +21,7 @@ function placeOrder({ email }) {
 }
 
 function CheckoutForm({ onOrderPlaced }) {
-  const [state, dispatch] = useReducer(checkoutReducer, initialCheckoutState);
+  const [state, dispatch] = useReducer(formReducer, INITIAL_VALUES, createFormState);
   const { values, touched, status, message } = state;
 
   const errors = validateCheckout(values);
